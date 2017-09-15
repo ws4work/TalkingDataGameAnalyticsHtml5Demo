@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>充值请求测试</title>
+
+    <script src="http://sdk.talkingdata.com/g/h5/v1/9AF34FA6A6B3443BB5B3446024CCB4D0" type="application/javascript"></script>
+    <script src="../js/talking_data.js" type="application/javascript"></script>
+    <script type="application/javascript">
+        //登录传入json数据
+        var json = '{"accountId":"123456","accountType":"1"}'
+
+        //充值订单号
+        var orderid = 'test-order-00000005'
+        //充值产品名称/编号
+        var iapid = '大包'
+        //现金金额
+        var currencyAmount = 100
+        //虚拟币金额
+        var virtualCurrencyAmount = 1000
+        //支付途径
+        var paymentType = 'AliPay'
+    </script>
+    <script type="application/javascript">
+        login(json)
+    </script>
+    <script type="application/javascript">
+        console.log('发送充值请求')
+        //rechargeRequest(orderid, iapid, currencyAmount, virtualCurrencyAmount, paymentType)
+        console.log('发送充值请求成功')
+
+        console.log('发送充值成功请求')
+        //rechargeSuccess(orderid)
+        console.log('发送充值成功请求成功')
+    </script>
+    <script type="application/javascript">
+        console.log('发送直接充值成功请求')
+        //rechargeSuccessDirect(orderid, iapid, currencyAmount, virtualCurrencyAmount, paymentType)
+        console.log('发送直接充值成功请求成功')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用示例</title>
+    <link href="../css/demo.css" type="text/css" />
+    <!--<script src="http://sdk.talkingdata.com/g/h5/v1/9AF34FA6A6B3443BB5B3446024CCB4D0" type="text/javascript"></script>-->
+    <script src="http://sdk.talkingdata.com/g/h5/v1/9AF34FA6A6B3443BB5B3446024CCB4D0" type="text/javascript"></script>
+    <script src="../js/talking_data.js" type="application/javascript"></script>
+    <script type="application/javascript">
+        //登录传入json数据
+        var json = '{"accountId":"123456","accountType":"1"}'
+
+        //昵称
+        var accountName = '昵称'
+        //账户种类:1,匿名;2,已注册
+        var accountType = 2
+        //级别:1-1000
+        var level = 1
+        //性别:1男2女
+        var gender = 1
+        //年龄:1-120
+        var age = 24
+        //服务器
+        var gameServer = '这个服务器'
+
+        //充值订单号
+        var orderid = 'test-order-00000001'
+        //充值产品名称/编号
+        var iapid = '大包'
+        //现金金额
+        var currencyAmount = 100
+        //虚拟币金额
+        var virtualCurrencyAmount = 1000
+        //支付途径
+        var paymentType = 'AliPay'
+
+        //原因
+        var cause = '赠予'
+
+        //物品id
+        var itemID = 'cost-00001'
+        //物品数量
+        var itemNumber = 2
+        //虚拟币单价
+        var priceInVirtualCurrency = 100
+
+        //任务id
+        var missionId = 'task001'
+        //操作:0,开始;1,完成;-1失败
+        var oper = 0
+
+
+        console.log('开始登陆')
+        login(json)
+        console.log('登陆成功')
+
+        console.log('修改昵称')
+        setAccountName(accountName)
+        console.log('修改账户成功')
+
+        console.log('修改账户种类')
+        setAccountType(accountType)
+        console.log('修改账户种类成功')
+
+        console.log('修改等级')
+        setLevel(level)
+        console.log('修改等级成功')
+
+        console.log('修改性别')
+        setGender(gender)
+        console.log('修改性别成功')
+
+        console.log('修改年龄')
+        setAge(age)
+        console.log('修改年龄成功')
+
+        console.log('修改服务器')
+        setGameServer(gameServer)
+        console.log('修改服务器成功')
+
+        console.log('获取设备id')
+        getDeviceId()
+        console.log('获取设备id成功')
+
+        console.log('发送充值请求')
+        rechargeRequest(orderid, iapid, currencyAmount, virtualCurrencyAmount, paymentType)
+        console.log('发送充值请求成功')
+
+        console.log('发送充值成功请求')
+        rechargeSuccess(orderid)
+        console.log('发送充值成功请求成功')
+
+        console.log('发送直接充值成功请求')
+        rechargeSuccessDirect(orderid, iapid, currencyAmount, virtualCurrencyAmount, paymentType)
+        console.log('发送直接充值成功请求成功')
+
+        console.log('赠予虚拟币')
+        reward(virtualCurrencyAmount, cause)
+        console.log('赠予虚拟币成功')
+
+        console.log('记录付费点')
+        consume(itemID, itemNumber, priceInVirtualCurrency)
+        console.log('记录付费点成功')
+
+        console.log('消耗物品或服务等')
+        expend(itemID, itemNumber)
+        console.log('消耗物品或服务等成功')
+
+        console.log('任务、关卡或副本')
+        task(missionId, cause, oper)
+        console.log('任务、关卡或副本成功')
+
+        //        console.log('自定义事件')
+        //TODO
+        //        event()
+        //        console.log('自定义事件成功')
+
+        console.log('退出')
+        exit()
+        console.log('退出成功')
+
+    </script>
+</head>
+<body>
+<h3>网站地址:www.talkingdata.com</h3>
+<p><span class="red-font">login(json)</span> 登录\注册 时调用</p>
+<p><span class="red-font">setAcount*(param)</span> 修改个人信息(非密码信息) 时调用</p>
+<p><span class="red-font">rechargeRequest(params)</span> 发起充值请求 时调用</p>
+<p><span class="red-font">rechargeSuccess(orderid)</span> 对已发起过充值的请求发起成功标识请求 时调用</p>
+<p><span class="red-font">rechargeSuccessDirect(params)</span> 对未发起过充值的请求发起成功标识请求 时调用</p>
+<p><span class="red-font">reward(params)</span> 赠予虚拟币/竞猜胜利 时调用</p>
+<p><span class="red-font">consume(params)</span> 购买/下注 时调用</p>
+<p><span class="red-font">expend(params)</span> 使用/竞猜失败 时调用</p>
+<p><span class="red-font">task(params)</span> 进入竞猜/投注 时调用</p>
+</body>
+</html>
